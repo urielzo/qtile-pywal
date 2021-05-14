@@ -10,7 +10,7 @@ Qtile, Pywal &amp; script to change colors on the fly.
 ![two](/preview/38.png)
 <br />
 ## tree
-![tree](/tree/51.png)
+![tree](/preview/51.png)
 
 * Distro: [ArchLabs](https://archlabslinux.com/)
 * Window manager: [qtile-git](https://aur.archlinux.org/qtile-git.git)
