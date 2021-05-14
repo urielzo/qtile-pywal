@@ -1,0 +1,15 @@
+configuration {
+	width: 1000;
+	show-icons: true;
+	lines: 15;
+	columns: 1;
+	font: "novamono for powerline bold 11";
+	bw: 0;
+	padding: 100;
+	eh: 1;
+	auto-select: false;
+	line-margin: 18;
+	separator-style: "solid";
+	hide-scrollbar: true;
+	theme: "~/.cache/wal/colors-rofi-dark.rasi";
+}

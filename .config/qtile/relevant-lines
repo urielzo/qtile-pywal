@@ -1,0 +1,343 @@
+import json
+
+
+
+
+
+
+#Pywal Colors
+colors = os.path.expanduser('~/.cache/wal/colors.json')
+colordict = json.load(open(colors))
+ColorZ=(colordict['colors']['color0'])
+ColorA=(colordict['colors']['color1'])
+ColorB=(colordict['colors']['color2'])
+ColorC=(colordict['colors']['color3'])
+ColorD=(colordict['colors']['color4'])
+ColorE=(colordict['colors']['color5'])
+ColorF=(colordict['colors']['color6'])
+ColorG=(colordict['colors']['color7'])
+ColorH=(colordict['colors']['color8'])
+ColorI=(colordict['colors']['color9'])
+
+
+# and change colors name on: 
+
+if you have this:
+layout_theme = {
+    "border_width": 3,
+    "margin": 9,
+    "border_focus": ColorC,
+    "border_normal": ColorZ,
+    "font": "FiraCode Nerd Font",
+    "grow_amount": 2,
+}
+
+# or:
+
+group_box_settings = {
+    "padding" : 5,
+                    "borderwidth" : 6,
+                    "active" : colors[9],
+                    "inactive" : colors[10],
+                    "disable_drag" : True,
+                    "rounded" : True,
+                    "margin_y" : 3,
+                    "margin_x" : 2,
+                    "padding_y" :-1,
+                    "padding_x" :4,
+                    #hide_unused" :True,
+                    "highlight_color" : colors[1],
+                    "highlight_method" : "block",
+                    "this_current_screen_border" : ColorZ,
+                    "this_screen_border" : colors [1],
+                    "other_current_screen_border" : colors[1],
+                    "other_screen_border" : colors[1],
+                    "foreground" : ColorG,
+                    "background" : ColorC,
+}
+
+# &
+
+screens = [
+    Screen(
+        top=bar.Bar(
+            [
+                 widget.Sep(
+                    linewidth=2,
+                    foreground=ColorC,
+                    background=ColorC,
+                    padding=6,
+                    size_percent=50,
+                 ),
+                 widget.TextBox(
+                    text="",
+                    foreground =ColorZ,
+                    background=ColorC,
+                    font = "feather",
+                    fontsize = 18,
+                    padding = 5,
+                    mouse_callbacks = {"Button1": open_instantsettings},
+                 ),
+                 widget.Sep(
+                    linewidth=2,
+                    foreground=ColorZ,
+                    background=ColorC,
+                    padding=25,
+                    size_percent=50,
+                 ),
+                widget.GroupBox(
+                    font="trebuchet ms",
+                    fontsize = 25,
+                    visible_groups=[""],
+                    **group_box_settings,
+                ),
+                widget.GroupBox(
+                    font="trebuchet ms",
+                    fontsize = 25,
+                    visible_groups=["", "", "", "", ""],
+                    **group_box_settings,
+                ),
+                widget.GroupBox(
+                    font="trebuchet ms",
+                    fontsize = 25,
+                    visible_groups=[""],
+                    **group_box_settings,
+                ),
+                widget.GroupBox(
+                    font="trebuchet ms",
+                    fontsize = 25,
+                    visible_groups=["", "", ""],
+                    **group_box_settings,
+                ),
+                widget.TextBox(
+                       text = "█▓▒░",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorZ,
+                       foreground = ColorC,
+                       padding = 0
+                       ),
+                widget.Sep(
+                    linewidth=0,
+                    foreground=ColorZ,
+                    background=ColorZ,
+                    padding=10,
+                    size_percent=40,
+                ),
+                widget.Sep(
+                    linewidth=0,
+                    foreground=ColorZ,
+                    background=ColorZ,
+                    padding=10,
+                    size_percent=50,
+                ),
+                widget.Spacer(),
+                widget.TextBox(
+                    text=" ",
+                    foreground=ColorZ,
+                    background=ColorZ,
+                    font="Font Awesome 5 Free Solid",
+                ),
+                widget.Spacer(),
+                widget.TextBox(
+                    text=" ",
+                    foreground=ColorZ,
+                    background=ColorZ,
+                    fontsize=28,
+                    padding=0,
+                ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorZ,
+                       foreground = ColorI,
+                       padding = 0
+                       ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorI,
+                       foreground = ColorG,
+                       padding = 0
+                       ),      
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                    fontsize = 15,
+                       background = ColorG,
+                       foreground = ColorZ,
+                       padding = 0,
+                       ),
+                widget.Net(
+                       background = ColorG,
+                       foreground = ColorZ,
+                       padding = 5,
+                       interface="enp6s0",
+                       format = '↓{down}',
+                       ),       
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorG,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 28,
+                       background = ColorZ,
+                       foreground = ColorF,
+                       padding = 0
+                       ),              
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                    fontsize = 15,
+                       background = ColorF,
+                       foreground = ColorZ,
+                       padding = 0,
+                       ),
+                widget.Memory(
+                        background=ColorF,
+                        foreground=ColorZ,
+                        format='{MemUsed: .0f} MB ',
+                        ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorF,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 28,
+                       background = ColorZ,
+                       foreground = ColorD,
+                       padding = 0
+                       ),             
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 15,
+                       foreground = ColorZ,
+                       background = ColorD,
+                       padding = 0
+                       ),
+                widget.CPU (
+                foreground=ColorZ,
+                background=ColorD,
+                ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorD,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),
+                 widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 28,
+                       background = ColorZ,
+                       foreground = ColorC,
+                       padding = 0
+                       ),      
+                 widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 15,
+                       foreground = ColorZ,
+                       background = ColorC,
+                       padding = 0
+                       ),
+                 widget.PulseVolume(
+                    foreground = ColorZ,
+                    background = ColorC,
+                    limit_max_volume="True",
+                    mouse_callbacks={"Button3": open_pavu},
+                ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorC,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 28,
+                       background = ColorZ,
+                       foreground = ColorB,
+                       padding = 0
+                       ),       
+                widget.TextBox(
+                    text="",
+                    font = "feather",
+                    fontsize = 15,
+                    foreground=ColorZ,  # fontsize=38
+                    background=ColorB,
+                ),
+                widget.Clock(
+                    format="%b, %d ",
+                    background=ColorB,
+                    foreground=ColorZ,
+                ),
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 29,
+                       background = ColorB,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),      
+                widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 28,
+                       background = ColorZ,
+                       foreground = ColorH,
+                       padding = 0
+                       ),                      
+                    widget.TextBox(
+                       text = "",
+                       font = "feather",
+                       fontsize = 15,
+                       background = ColorH,
+                       foreground = ColorZ,
+                       padding = 0
+                       ),
+                    widget.Clock(
+                        background=ColorH,
+                        foreground = ColorZ,
+                        icons_size=20,
+                        padding=8
+                        ),
+                widget.Sep(
+                    padding = 6,
+                    linewidth = 0,
+                    background = ColorH,
+                    foreground = ColorH,
+                ),
+                #widget.QuickExit(
+                #background=ColorZ,
+                #),
+            ],
+            31,
+            margin=[10, 15, 5, 15],
+            opacity=0.75,
+        ),
+        bottom=bar.Gap(18),
+        left=bar.Gap(18),
+        right=bar.Gap(18),
+    ),
+]

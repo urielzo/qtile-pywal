@@ -1,0 +1,115 @@
+@import "~/.cache/wal/colors-rofi-dark"
+window {
+    transparency:                   "real";
+    background-color:               @background;
+    text-color:                     @foreground;
+    height:                         92%;
+    width:                          98%;
+    location:                       northwest;
+    anchor:                         northwest;
+    x-offset:                       1%;
+    y-offset:                       5.5%;
+}
+
+textbox-prompt-colon {
+    expand:                        false;
+    str:                           "";
+    margin:                        0px 0.3em 0em 0em;
+    text-color:                    @normal-foreground;
+}
+prompt {
+    enabled: 						false;
+}
+
+inputbar {
+    background-color:               @active-background;
+    text-color:                     @background;
+    expand:                         false;
+    margin:                         0px 20% 0px 20%;
+    padding:                        10px 10px 10px 10px;
+    position:                       north;
+    border-radius:                  50px;
+}
+
+
+entry {
+    background-color:               @active-background;
+    text-color:                     @background;
+    placeholder-color:              @background;
+    expand:                         true;
+    horizontal-align:               0.5;
+    placeholder:                    "Search applications";
+    blink:                          true;
+}
+
+case-indicator {
+    background-color:               @active-background;
+    text-color:                     @active-background;
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @background;
+    columns:                        7;
+    spacing:                        4px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background-color;
+    children:                       [ inputbar, listview ];
+    spacing:                        25px;
+    padding:                        45px 5% 45px 5%;
+}
+
+
+element {
+    background-color:               @background;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    padding:                        25px 0px 25px 0px;
+}
+
+element-icon {
+    size:                           10%;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         5px 10px 0px 10px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @urgent;
+    text-color:                     @foreground;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @background-alt;
+    text-color:                     @foreground;
+}
+
+element selected {
+    border:                          0% 0% 0.2% 0%;
+    border-color:                    #5293E1;
+    background-color:               @background-alt;
+    text-color:                     @foreground-selected;
+    border-radius:                  12px;
+}
+
+element selected.urgent {
+    background-color:               @urgent-selected;
+    text-color:                     @foreground;
+}
+
+element selected.active {
+    background-color:               @background-alt;
+    color:                          @foreground-selected;
+}
