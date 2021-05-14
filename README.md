@@ -37,5 +37,6 @@ if ~/.config/qtile/autostart.sh don't work...
 copy this lines to your ~/.xinitrc
 
 walp &
+
 qtile cmd-obj -o cmd -f restart
 
